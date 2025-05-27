@@ -1,9 +1,55 @@
-.despesa-form label,
-.despesa-form input{
-    display: block;
-    text-align: left;
-    width: 100%;
-    margin: 10 px auto;
-    box-sizing: border-box;
-    font-size: 1.2em;
+.despesa-form {
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 30px 25px;
+  background-color: #effaf0; /* igual que login-container */
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.despesa-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  color: #444;
+  font-size: 0.95em;
+}
+
+.despesa-form label span {
+  margin-bottom: 6px;
+}
+
+.despesa-form input,
+.despesa-form select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.despesa-form input:focus,
+.despesa-form select:focus {
+  border-color: #4caf50;
+  outline: none;
+}
+
+.despesa-form button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 4px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.despesa-form button:hover {
+  background-color: #45a049;
 }
