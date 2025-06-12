@@ -1,0 +1,52 @@
+.projecte-form {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 30px 25px;
+  background-color: #e9f7ec; /* verd molt clar de fons */
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-family: sans-serif;
+}
+
+.projecte-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  color: #2f5d3f; /* verd fosc per al text */
+  font-size: 1em;
+}
+
+.projecte-form label span {
+  margin-bottom: 6px;
+}
+
+.projecte-form input {
+  padding: 10px;
+  border: 1px solid #b5d9bf; /* verd suau a la vora */
+  border-radius: 4px;
+  font-size: 1em;
+  transition: border-color 0.3s ease;
+}
+
+.projecte-form input:focus {
+  border-color: #4caf50; /* verd actiu */
+  outline: none;
+}
+
+.projecte-form button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 4px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.projecte-form button:hover {
+  background-color: #45a049;
+}

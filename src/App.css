@@ -4,6 +4,25 @@
   padding: 2rem;
   text-align: center;
 }
+/* components/navbar/Navbar.css */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #effaf0;
+  padding: 20px 10px;
+  box-sizing: border-box;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+/* Cos principal de l'app */
+.main-content {
+  padding-top: 100px; /* ha de ser almenys igual a l'alçada de la navbar */
+  max-width: 960px;
+  margin: 0 auto;
+}
 
 .logo {
   height: 6em;

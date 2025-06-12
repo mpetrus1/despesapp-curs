@@ -1,0 +1,42 @@
+.pagina-projectes {
+  padding: 2rem;
+  background-color: #f7fcf9; /* verd clar de fons */
+  min-height: 100vh;
+}
+
+.pagina-projectes h1 {
+  font-size: 2rem;
+  color: #2c662d;
+  margin-bottom: 1.5rem;
+}
+
+.pagina-projectes h3 {
+  font-size: 1.2rem;
+  color: #3e8e41; 
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+
+.afegir-projecte-container {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.boto-afegir-projecte {
+  background-color: #2ecc71; /* verd */
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.boto-afegir-projecte:hover {
+  background-color: #27ae60; /* verd més fosc al passar-hi el cursor */
+}
+

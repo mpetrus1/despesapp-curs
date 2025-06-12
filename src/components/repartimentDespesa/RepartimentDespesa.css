@@ -1,0 +1,31 @@
+.repartiment-container {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #f4fdf5;
+  border-radius: 8px;
+  border: 1px solid #b6e5c8;
+}
+
+.repartiment-llista {
+  list-style: none;
+  padding: 0;
+}
+
+.repartiment-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #dbeedc;
+}
+
+.repartiment-item label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.import-assignat {
+  font-weight: bold;
+  color: #2e7d32;
+}

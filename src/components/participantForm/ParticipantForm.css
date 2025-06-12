@@ -1,0 +1,50 @@
+.participant-form {
+  background-color: #e6f0ff; /* blau molt suau */
+  border: 1px solid #a3c2ff;
+  border-radius: 8px;
+  padding: 25px;
+  max-width: 400px;
+  margin: 40px auto;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.participant-form h3 {
+  color: #003399;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.participant-form label {
+  font-weight: 500;
+  color: #003366;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.95em;
+}
+
+.participant-form input,
+.participant-form select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+  margin-top: 6px;
+}
+
+.participant-form button {
+  background-color: #0066cc;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 4px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.participant-form button:hover {
+  background-color: #005bb5;
+}

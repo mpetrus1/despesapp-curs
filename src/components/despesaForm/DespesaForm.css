@@ -2,7 +2,7 @@
   max-width: 400px;
   margin: 60px auto;
   padding: 30px 25px;
-  background-color: #effaf0; /* igual que login-container */
+  background-color: #fffde7;
   border-radius: 8px;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
   box-sizing: border-box;
@@ -35,13 +35,13 @@
 
 .despesa-form input:focus,
 .despesa-form select:focus {
-  border-color: #4caf50;
+  border-color: #fbc02d;
   outline: none;
 }
 
 .despesa-form button {
-  background-color: #4caf50;
-  color: white;
+  background-color: #fdd835;
+  color: #333;
   border: none;
   padding: 12px;
   border-radius: 4px;
@@ -51,5 +51,5 @@
 }
 
 .despesa-form button:hover {
-  background-color: #45a049;
+  background-color: #fbc02d;
 }

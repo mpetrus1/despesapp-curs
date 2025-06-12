@@ -1,0 +1,87 @@
+.targeta {
+  background-color: #f4fdf7; /* Verd molt suau */
+  border: 1px solid #d0e8d0;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.targeta:hover {
+  transform: scale(1.01);
+  background-color: #e6faed;
+}
+
+.targeta h2 {
+  margin: 0;
+  color: #2c662d;
+  font-size: 1.2em;
+}
+
+.targeta a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.targeta button {
+  margin-top: 10px;
+  background-color: #e74c3c; /* Vermell */
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 0.9em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.targeta button:hover {
+  background-color: #c0392b;
+}
+
+.llista-projectes {
+  padding: 1rem;
+}
+
+.targeta {
+  background-color: #f4fdf7; /* Verd clar */
+  border: 1px solid #d0e8d0;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.targeta:hover {
+  transform: scale(1.01);
+  background-color: #e6faed;
+}
+
+.enllac-projecte {
+  text-decoration: none;
+  color: #2c662d;
+}
+
+.targeta h2 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.boto-eliminar {
+  margin-top: 10px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 0.9em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.boto-eliminar:hover {
+  background-color: #c0392b;
+}
+

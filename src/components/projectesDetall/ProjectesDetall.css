@@ -1,0 +1,28 @@
+.participants-container {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 30px 25px;
+  background-color: #e3f2fd; /* blau molt clar */
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+.participants-button {
+  background-color: #42a5f5; /* blau mitjà */
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  transition: background-color 0.3s ease;
+}
+
+.participants-button:hover {
+  background-color: #1e88e5; /* blau més fosc en hover */
+}

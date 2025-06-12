@@ -1,119 +1,21 @@
-import {useState, useEffect} from 'react';
-import {onGetCollection, deleteDespesa, saveDespesa} from '../../firebase/firebase';
-import Modal from '../../components/modal/Modal';
-import DespesesLlista from '../../components/despesesLlista/DespesesLlista';
-import DespesaForm from '../../components/despesaForm/DespesaForm';
-
-//import { useCollection } from '../../hooks/useCollection';
-
-
+import React, { useEffect, useState } from 'react';
+import { Navigate } from 'react-router-dom';
+import { auth } from '../../firebase/firebase';
+import { onAuthStateChanged } from 'firebase/auth';
 
 export default function Inici() {
-const [mostraModal, setMostraModal] = useState(false);
-const [despeses, setDespeses] = useState (null);
+  const [user, setUser] = useState(null);
+  const [carregant, setCarregant] = useState(true);
 
-const [filtrarPerQuantia, setFiltrarPerQuantia] = useState(false); 
-
-//const {documents : despeses} = useCollection('despeses');
-
-
-
-  useEffect(()=>{
-    const unsubscribe = onGetCollection("despeses",(querySnapshot)=>{
-      let resultats = [];
-
-      querySnapshot.forEach((doc)=>{
-        const despesa = doc.data();
-        despesa.id = doc.id;
-
-        resultats.push({...doc.data(), id: doc.id});
-      });
-
-      setDespeses(resultats)
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (usuari) => {
+      setUser(usuari);
+      setCarregant(false);
     });
-    return ()=>unsubscribe();
-  },[])
+    return () => unsubscribe();
+  }, []);
 
-  useEffect(()=>{
-    setDespeses((despesesPrevies) => {
-      if(filtrarPerQuantia)
-        return despesesPrevies.filter((despesa) => despesa.quantia > 10.00);
-      else
-        return despesesPrevies;
-    })
-  }
-  , [filtrarPerQuantia]) 
+  if (carregant) return <div>Carregant...</div>;
 
-
-      const afegirDespesa = (despesa) => {
-        //Comentat el que provocava la duplicació de despeses
-        // setDespeses((despesesPrevies) => {
-
-        //     saveDespesa(despesa)
-        //         .then((idDespesa) => {
-        //             despesa.id = idDespesa;
-
-        //             if (!despesesPrevies) {
-        //                 return [despesa];
-        //             } else {
-        //                 return [...despesesPrevies, despesa];
-        //             }
-        //         })
-        // }
-        // );
-        saveDespesa(despesa)
-                .then((idDespesa) => {
-                    despesa.id = idDespesa;
-
-                    // if (!despesesPrevies) {
-                    //     return [despesa];
-                    // } else {
-                    //     return [...despesesPrevies, despesa];
-                    // }
-                })
-        setMostraModal(false);
-    };
-
-    const eliminarDespesa = (id) =>{
-      //No fa falta  cridar a setDespeses. Firebase ja elimina del snapshot
-      // setDespeses((despesesPrevies)=> {
-      //   deleteDespesa(id)
-      //   .then(
-      //     ()=>{
-      //       return despesesPrevies.filter((despesa) => id !== despesa.id)
-      //     }
-      //   )
-        
-      // })
-      deleteDespesa(id)
-
-    }
-
-      const handleTancar = () => {
-    setMostraModal(false);
-    console.log(mostraModal);
-  }
-  const handleMostrarModal = () => {
-    setMostraModal(true);
-    console.log(mostraModal);
-  }
-
-  return (
-    <>
-        {
-          despeses && <DespesesLlista despeses = {despeses} handleClick = {eliminarDespesa}/>
-        }
-        {mostraModal && <Modal handleTancar = {handleTancar}>
-              <DespesaForm afegirDespesa = {afegirDespesa}/>
-            </Modal>}
-        
-            <div>
-              <button onClick = {handleMostrarModal}>Afegir despesa</button>
-            </div>
-            <div>
-              <button onClick={()=>setFiltrarPerQuantia(true)}>Filtrar</button>
-            </div>
-    </>
-    
-  )
+  return user ? <Navigate to="/projectes" replace /> : <Navigate to="/login" replace />;
 }

@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import './DespesaForm.css'
+import { afegirDespesaAProjecte } from '../../firebase/firebase';
 
-export default function DespesaForm({afegirDespesa}) {
+export default function DespesaForm({ idProjecte, participants }) {
 
   const [concepte, setConcepte] = useState("");
   const [quantia, setQuantia] = useState("");
@@ -20,34 +21,36 @@ export default function DespesaForm({afegirDespesa}) {
       concepte: concepte,
       quantia: quantia,
       pagatPer: pagatPer,
-      id: Math.floor(Math.random()*1000)
+      idProjecte: idProjecte
     }
 
     console.log(despesa);
-    afegirDespesa(despesa);
+    afegirDespesaAProjecte(idProjecte, despesa);
     resetForm();
   }
 
   return (
     <form className='despesa-form' onSubmit={handleSubmit}>
-        <label>
-            <span>Concepte</span>
-            <input type="text" onChange={(e)=>setConcepte(e.target.value)} value={concepte}/>    
-        </label>
-        <label>
-            <span>Quantia</span>
-            <input type="text" onChange={(e)=>setQuantia(e.target.value)} value={quantia}/>    
-        </label>
-        <label>
-            <span>Pagat per</span>
-            <select onChange={(e)=>{setPagatPer(e.target.value)}}>
-              <option value="joan">Joan</option>
-              <option value="anna">Anna</option>
-              <option value="pere">Pere</option>
-              <option value="ines">Ines</option>
-            </select>
-        </label>
-        <button>Afegir</button>
+      <label>
+        <span>Concepte</span>
+        <input type="text" onChange={(e) => setConcepte(e.target.value)} value={concepte} />
+      </label>
+      <label>
+        <span>Quantia</span>
+        <input type="text" onChange={(e) => setQuantia(e.target.value)} value={quantia} />
+      </label>
+      <label>
+        <span>Pagat per</span>
+        <select value={pagatPer} onChange={(e) => { setPagatPer(e.target.value) }} required>
+          <option value="">Selecciona un participant</option>
+          {participants && participants.map((participant) => (
+            <option key={participant.id} value={participant.id}>
+              {participant.nom || participant.name || participant.email}
+            </option>
+          ))}
+        </select>
+      </label>
+      <button>Afegir</button>
     </form>
   )
 }

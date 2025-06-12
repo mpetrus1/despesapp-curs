@@ -1,0 +1,82 @@
+.participants-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px 25px;
+  background-color: #f0f4ff;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+.participants-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 1.4em;
+  color: #333;
+  letter-spacing: 1px;
+}
+
+.participants-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.participant-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  transition: background-color 0.3s ease;
+}
+
+.participant-item:hover {
+  background-color: #e6f2e7;
+}
+
+.participant-nom {
+  font-weight: 600;
+  color: #333;
+}
+
+.participant-email {
+  font-style: italic;
+  color: #666;
+}
+
+.participants-actions {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.participants-button {
+  background-color: #003399;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 4px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.participant-eliminar {
+  margin-top: 8px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 0.9em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.participants-button:hover {
+  background-color: #45a049;
+}
