@@ -49,9 +49,21 @@ export default function Navbar() {
       </div>
 
       <ul className="navbar-menu">
-        <li><a href="/">Inici</a></li>
-        <li><button onClick={handleLogout}>Logout</button></li>
-      </ul>
+  <li>
+    <Link to="/">Inici</Link>
+  </li>
+
+  {user ? (
+    <li>
+      <button onClick={handleLogout}>Logout</button>
+    </li>
+  ) : (
+    <li>
+      <Link to="/register">Registrar</Link>
+    </li>
+  )}
+</ul>
+
     </nav>
   )
 }
