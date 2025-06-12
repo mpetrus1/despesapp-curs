@@ -1,8 +1,8 @@
 import React from 'react'
 import { useState } from 'react'
-import { afegirParticipantAProjecte } from '../../firebase/firebase';
 
-export default function ParticipantExternForm({ idProjecte }) {
+
+export default function ParticipantExternForm({ idProjecte, afegirParticipant }) {
 
   const [nom, setNom] = useState("");
   const [email, setEmail] = useState("");
@@ -22,7 +22,7 @@ export default function ParticipantExternForm({ idProjecte }) {
       email: email
     }
 
-    afegirParticipantAProjecte(idProjecte, participant);
+    afegirParticipant(idProjecte, participant);
     resetForm();
   };
 

@@ -58,7 +58,6 @@ export default function DespesesLlista({ idsDespeses, handleEliminar, idProjecte
       <h3 className="despeses-title">Llista de despeses</h3>
       <ul className="despeses-list">
         {despeses.map((despesa) => (
-
           <li key={despesa.id} className="despesa-item">
             <div><strong>Concepte:</strong> {despesa.concepte}</div>
             <div><strong>Pagat per:</strong> {participants.find(p => p.id === despesa.pagatPer)?.name || "Desconegut"}</div>
@@ -73,12 +72,11 @@ export default function DespesesLlista({ idsDespeses, handleEliminar, idProjecte
 
               Eliminar
             </button>
-            <Link to={`/despesa/${despesa.id}`}>
+            {<Link to={`/despesa/${despesa.id}`}>
               <button className="despesa-veure">Veure detall</button>
 
-            </Link>
+            </Link> }
           </li>
-
         ))}
       </ul>
     </div>

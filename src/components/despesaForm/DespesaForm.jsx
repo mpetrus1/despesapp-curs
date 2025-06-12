@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import './DespesaForm.css'
-import { afegirDespesaAProjecte } from '../../firebase/firebase';
 
-export default function DespesaForm({ idProjecte, participants }) {
+
+export default function DespesaForm({ idProjecte, participants, afegirDespesa }) {
 
   const [concepte, setConcepte] = useState("");
   const [quantia, setQuantia] = useState("");
@@ -25,7 +25,7 @@ export default function DespesaForm({ idProjecte, participants }) {
     }
 
     console.log(despesa);
-    afegirDespesaAProjecte(idProjecte, despesa);
+    afegirDespesa(idProjecte, despesa);
     resetForm();
   }
 

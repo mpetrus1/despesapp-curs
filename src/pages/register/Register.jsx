@@ -30,7 +30,7 @@ export default function Register() {
     if (res.code == undefined){
       //saveParticipant
       saveCollection("participants", {uid: res.user.uid, email, name})
-      .then((user)=>{
+      .then(()=>{
         setMissatge("Registre complet!")
         setError("")
         setTimeout(()=>{
@@ -82,10 +82,7 @@ export default function Register() {
               onChange={(e) => setConfirmPassword(e.target.value)}
               className="form-input"
               required/>
-
         <button type ="submit">Registrar-se</button>
-
-
       </form>
     </div>
   )

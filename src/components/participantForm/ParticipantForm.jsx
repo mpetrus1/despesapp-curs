@@ -4,11 +4,11 @@ import './ParticipantForm.css'
 import ParticipantExternForm from '../participantExternForm/ParticipantExternForm';
 import ParticipantRegistratForm from '../participantRegistratForm/ParticipantRegistratForm';
 
-export default function ParticipantForm({ idProjecte }) {
+export default function ParticipantForm({ idProjecte, afegirParticipant }) {
 
   const [tipus, setTipus] = useState('registrat');
 
-  console.log("Dins participantform idProjecte val", idProjecte)
+  
   return (
     <>
       <div className='participant-form' >
@@ -20,9 +20,9 @@ export default function ParticipantForm({ idProjecte }) {
             <option value="extern">Participant extern</option>
           </select>
         </label>
-        {tipus === 'registrat' ? (<ParticipantRegistratForm idProjecte={idProjecte} />)
+        {tipus === 'registrat' ? (<ParticipantRegistratForm idProjecte={idProjecte} afegirParticipant = {afegirParticipant}/>)
           :
-          (<ParticipantExternForm idProjecte={idProjecte} />)}
+          (<ParticipantExternForm idProjecte={idProjecte} afegirParticipant = {afegirParticipant}/>)}
       </div>
     </>
   )

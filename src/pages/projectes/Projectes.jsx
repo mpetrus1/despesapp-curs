@@ -19,6 +19,7 @@ export default function Projectes() {
 
     console.log("Afegir nou projecte", nouProjecte)
     await afegirProjecte(nouProjecte);
+    handleTancar();
 
   }
 

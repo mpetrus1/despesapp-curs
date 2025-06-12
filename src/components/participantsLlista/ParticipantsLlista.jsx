@@ -52,9 +52,6 @@ export default function ParticipantsLlista({ idsParticipants, handleEliminar, id
           </li>
         ))}
       </ul>
-
-      <div className="participants-actions">
-      </div>
     </div>
   )
 }

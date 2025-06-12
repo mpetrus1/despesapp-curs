@@ -34,8 +34,8 @@ export default function ProjectesDetall() {
     setMostrarModalDespesa(false);
   }
 
-  const afegirParticipant = (idProjecte, participant) => {
-    afegirParticipantAProjecte(idProjecte, participant)
+  const afegirParticipant = async (idProjecte, participant) => {
+    await afegirParticipantAProjecte(idProjecte, participant)
     setMostrarModalParticipant(false);
   }
 
@@ -103,7 +103,7 @@ export default function ProjectesDetall() {
         <button className="despeses-button" onClick={handleMostrarModalDespesa}>Afegir despesa</button>
       </div>
       {mostrarModalDespesa && <Modal handleTancar={handleTancarDespesa}>
-        <DespesaForm afegirDespesa={afegirDespesa} idProjecte={id} participants={participantsComplerts} />
+        <DespesaForm afegirDespesa={afegirDespesa} idProjecte={id} participants={participantsComplerts}/>
       </Modal>}
     </div>
   )

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { getParticipantsRegistrats, afegirParticipantAProjecte } from '../../firebase/firebase';
+import { getParticipantsRegistrats } from '../../firebase/firebase';
 
 
-export default function ParticipantRegistratForm({ idProjecte }) {
+export default function ParticipantRegistratForm({ idProjecte, afegirParticipant }) {
   const [participants, setParticipants] = useState([]);
   const [seleccionat, setSeleccionat] = useState("");
 
@@ -18,7 +18,7 @@ export default function ParticipantRegistratForm({ idProjecte }) {
     e.preventDefault();
     if (seleccionat) {
       const participant = participants.find(p => p.id === seleccionat);
-      afegirParticipantAProjecte(idProjecte, participant);
+      afegirParticipant(idProjecte, participant);
     }
   };
   
