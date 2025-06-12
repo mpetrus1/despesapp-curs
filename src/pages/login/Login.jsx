@@ -19,9 +19,8 @@ export default function Login() {
 
     if (res.code == undefined) {
       console.log(res.uid);
-      //Navigate
+      
       navigate("/projectes", { replace: true });
-
 
     } else {
       setError(res.message);
@@ -29,9 +28,6 @@ export default function Login() {
   }
 
   return (
-
-
-
     <div className="login-container">
       <h2>Login</h2>
       <form className="login-form" onSubmit={handleSubmit}>

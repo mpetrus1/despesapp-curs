@@ -31,14 +31,6 @@ export default function ParticipantsLlista({ idsParticipants, handleEliminar, id
   }, [idsParticipants]);
 
   return (
-    // <div>
-
-    //     <ul>{participants.map((p) => (
-
-    //         <li key = {p.id}>{p.name} ({p.email})</li>
-    //     ))}</ul>
-    // </div>
-
     <div className="participants-container">
       <h3 className="participants-title">Participants del projecte</h3>
 
@@ -62,9 +54,6 @@ export default function ParticipantsLlista({ idsParticipants, handleEliminar, id
       </ul>
 
       <div className="participants-actions">
-        {/* <button className="participants-button"> 
-          Afegir participant
-        </button> */}
       </div>
     </div>
   )

@@ -11,13 +11,11 @@ export default function RepartimentDespesa({ importTotal, participants }) {
     }, [participants]);
 
     const toggleSeleccionat = (id) => {
-        setSeleccionats((prev) =>
-            prev.includes(id) ? prev.filter((pid) => pid !== id) : [...prev, id]
+        setSeleccionats((prev) => prev.includes(id) ? prev.filter((pid) => pid !== id) : [...prev, id]
         );
     };
 
-    const importPerPersona =
-        seleccionats.length > 0 ? (importTotal / seleccionats.length).toFixed(2) : 0;
+    const importPerPersona = seleccionats.length > 0 ? (importTotal / seleccionats.length).toFixed(2) : 0;
 
     return (
         <div className="repartiment-container">
@@ -33,8 +31,7 @@ export default function RepartimentDespesa({ importTotal, participants }) {
                             />
                             {p.name}
                         </label>
-                        <span className="import-assignat">
-                            {seleccionats.includes(p.id) ? `${importPerPersona} €` : '--'}
+                        <span className="import-assignat"> {seleccionats.includes(p.id) ? `${importPerPersona} €` : '--'}
                         </span>
                     </li>
                 ))}

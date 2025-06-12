@@ -11,10 +11,8 @@ export default function ParticipantForm({ idProjecte }) {
   console.log("Dins participantform idProjecte val", idProjecte)
   return (
     <>
-
       <div className='participant-form' >
         <h3>Afegir participant</h3>
-
         <label>
           Tipus de participant:
           <select value={tipus} onChange={(e) => setTipus(e.target.value)}>
@@ -25,10 +23,7 @@ export default function ParticipantForm({ idProjecte }) {
         {tipus === 'registrat' ? (<ParticipantRegistratForm idProjecte={idProjecte} />)
           :
           (<ParticipantExternForm idProjecte={idProjecte} />)}
-
-
       </div>
-
     </>
   )
 }

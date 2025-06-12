@@ -39,9 +39,6 @@ export default function Navbar() {
 
 
   return (
-
-
-
     <nav className="navbar">
       <div className="navbar-container">
         <div className="navbar-titol">Despesapp</div>
@@ -56,8 +53,5 @@ export default function Navbar() {
         <li><button onClick={handleLogout}>Logout</button></li>
       </ul>
     </nav>
-
-
-
   )
 }

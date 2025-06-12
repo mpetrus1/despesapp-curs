@@ -21,9 +21,7 @@ export default function ParticipantRegistratForm({ idProjecte }) {
       afegirParticipantAProjecte(idProjecte, participant);
     }
   };
-
-
-
+  
   return (
     <form className="participant-registrat-form" onSubmit={handleSubmit}>
       <label>

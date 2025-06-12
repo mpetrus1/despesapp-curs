@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getDoc, doc } from 'firebase/firestore';
 import { db, onGetItem, eliminarDespesaDeProjecte, eliminarParticipantDeProjecte, afegirDespesaAProjecte, afegirParticipantAProjecte } from '../../firebase/firebase';
-import ParticipantsLlista from '../participantsLlista/participantsLlista';
+import ParticipantsLlista from '../participantsLlista/ParticipantsLlista';
 import DespesesLlista from '../despesesLlista/DespesesLlista';
 import Modal from '../modal/Modal';
 import DespesaForm from '../despesaForm/DespesaForm';
@@ -69,22 +69,20 @@ export default function ProjectesDetall() {
 
   const handleTancarDespesa = () => {
     setMostrarModalDespesa(false);
-
   }
 
   const handleTancarParticipant = () => {
     setMostrarModalParticipant(false);
-
   }
 
   const handleMostrarModalDespesa = () => {
     setMostrarModalDespesa(true);
-
   }
+
   const handleMostrarModalParticipant = () => {
     setMostrarModalParticipant(true);
-
   }
+  
   return (
     <div>
       <h2>Detall del projecte</h2>
